@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  
+	            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	
+	<meta name="theme-color" content="#FAFAFA">
+	  
+	  
+    <title>suun.io/23</title>
+
+    <!-- Include font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+
+		<!-- Include auma JS -->
+		<script type="text/javascript" src="dist/auma.js"></script>
+
+		<!-- Include Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+  </head>
+  <body>
+
+	     
+    <div id="flat-black-player-container">
+	
+      <div id="list-screen" class="slide-in-top">
+        <div id="list-screen-header" class="hide-playlist">
+          <img id="up-arrow" src="img/up.svg"/>
+          sunn.io
+        </div>
+
+        <div id="list">
+          <div class="song auma-song-container auma-play-pause" data-auma-song-index="0">
+            <span class="song-number-now-playing">
+              <span class="number">1</span>
+              <img class="now-playing" src="img/now-playing.svg"/>
+            </span>
+
+            <div class="song-meta-container">
+              <span class="song-name" data-auma-song-info="name" data-auma-song-index="0"></span>
+              <span class="song-artist-album"><span data-auma-song-info="artist" data-auma-song-index="0"></span> - <span data-auma-song-info="album" data-auma-song-index="0"></span></span>
+            </div>
+
+            <span class="song-duration">
+              3:30
+            <span>
+          </div>
+         
+                 </div>
+
+        <div id="list-screen-footer">
+          <div id="list-screen-meta-container">
+            <span data-auma-song-info="name" class="song-name"></span>
+
+            <div class="song-artist-album">
+              <span data-auma-song-info="artist"></span>
+            </div>
+          </div>
+          <div class="list-controls">
+            <div class="list-previous auma-prev"></div>
+            <div class="list-play-pause auma-play-pause"></div>
+            <div class="list-next auma-next"></div>
+          </div>
+        </div>
+      </div>
+      <div id="player-screen">
+        <div class="player-header down-header">
+          <img id="down" src="img/down.svg"/>
+          sunn.io
+        </div>
+
+       
+       <div style="width:60px;float:left;margin-left:15px;margin-top:-1px;line-height: 0;"> <img src="img/auma.png" width="67" height="15"/></div>
+       
+        <div id="player-progress-bar-container">
+
+          <progress id="song-played-progress" class="auma-song-played-progress"></progress>
+          <progress id="song-buffered-progress" class="auma-buffered-progress" value="0"></progress>
+        </div>
+
+        <div id="player-bottom">
+          <div id="control-container">
+
+
+
+
+
+            <div id="play-pause-container">
+              <div class="auma-play-pause" id="play-pause"></div>
+            </div>
+
+
+
+
+          </div>
+          
+                  <div id="player-middle">
+
+          <div id="meta-container">
+            <span data-auma-song-info="name" class="song-name"></span>
+
+          </div>
+        </div>
+
+          <div id="volume-container">
+            <img src="img/volume.svg"/><input type="range" class="auma-volume-slider" step=".1"/>
+          </div>
+          
+
+            
+        </div>
+        
+                <div id="player-top">
+          <img data-auma-song-info="cover_art_url"/>
+        </div>     
+        
+    <button  onclick="location.href='http://www.audiopedia.org'" class="btn-left" style="display:none" type="button"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+    <button class="btn-right" style="display:none"><svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 24 24" width="42px" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></button> 
+        
+      </div>
+    </div>
+  </body>
+  
+<script language="JavaScript">
+  openShare = async () => {
+if (navigator.share) {
+  navigator.share({
+    title: 'This is a suun test track.',
+    url: 'https://suun.io/23',
+  })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing', error));
+}
+  };
+</script>	
+	
+
+
+  <!--
+    Include UX functions JS
+
+    NOTE: These are for handling things outside of the scope of aumaJS
+  -->
+  <script type="text/javascript" src="js/functions.js"></script>
+</html>
