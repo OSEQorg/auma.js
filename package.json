@@ -1,8 +1,8 @@
 {
-  "name": "@peter554/auma",
+  "name": "@os4eq/auma",
   "version": "0.0.2",
   "description": "Augmented Audio Framework (AUMA).",
-  "repository": "peter554/auma",
+  "repository": "os4eq/auma",
   "license": "MIT",
   "files": [
     "dist/"
