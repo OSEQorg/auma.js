@@ -1,4 +1,12 @@
 {
+  "name": "@peter554/auma",
+  "version": "0.0.2",
+  "description": "Augmented Audio Framework (AUMA).",
+  "repository": "peter554/auma",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "--- CORE ---": "",
     "build": "npm run build:survey",
@@ -9,7 +17,7 @@
     "--- MISC ---": "",
     "fmt": "prettier --write ."
   },
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^6.2.0",
     "css-loader": "^5.2.6",
     "http-server": "^0.12.3",
