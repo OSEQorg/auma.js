@@ -64,6 +64,5 @@ survey({
   ],
   trackFn: function (event, extraData = {}) {
     console.log({ event, extraData });
-    window.splitbee.track(event, extraData);
   },
 });

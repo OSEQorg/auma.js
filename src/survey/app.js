@@ -38,12 +38,10 @@ const App = {
     },
     handleWelcomeDone() {
       this.view = "survey";
-      this.config.trackFn("PAGE_SURVEY");
     },
     handleSurveySubmit(results) {
       this.results = results;
       this.view = "results";
-      this.config.trackFn("PAGE_RESULTS");
     },
   },
 };
