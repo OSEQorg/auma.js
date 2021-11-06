@@ -8,7 +8,7 @@ export const Results = {
   },
   template: `
 <div class="results">
-  <app-audio :url="audioUrl" />
+  <app-audio :url="audioUrl" :style="{width: '240px'}"/>
 </div>`,
   props: {
     config: Object,
