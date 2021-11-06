@@ -1,5 +1,5 @@
 survey({
-  id: "Audiopedia-CorrelAid",
+  id: "demo-survey",
   welcome: {
     audioUrl: "/mp3/01.mp3",
   },
