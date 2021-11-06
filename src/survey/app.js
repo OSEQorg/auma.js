@@ -66,16 +66,6 @@ function survey(config) {
       .component("results", Results)
       .mount(el);
 
-    const sendResultsTo = new URLSearchParams(window.location.search).get(
-      "sendResultsTo"
-    );
-    if (!sendResultsTo) {
-      alert(
-        "missing sendResultsTo parameter - please provide this via the query parameter"
-      );
-    }
-    config = { ...config, sendResultsTo };
-
     vm.config = config;
     vm.start();
   };

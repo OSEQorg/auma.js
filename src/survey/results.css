@@ -6,8 +6,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.results__send {
-  margin-top: 2rem;
-  transition: all 3s;
-}
