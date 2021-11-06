@@ -14,7 +14,6 @@ You create an augmented audio application with just a simple HTML file:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Include the AUMA script for this application type -->
     <script src="SCRIPT"></script>
