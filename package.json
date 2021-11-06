@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "--- CORE ---": "",
+    "build": "npm run build:survey",
+    "--- SURVEY ---": "",
+    "build:survey": "webpack --config webpack.config.js --env app=survey --env mode=production",
+    "build-demo:survey": "webpack --config webpack.config.js --watch --env app=survey --env mode=development",
+    "start-demo:survey": "concurrently npm:build-demo:survey \"http-server ./demo/survey\"",
+    "--- MISC ---": "",
+    "fmt": "prettier --write ."
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "css-loader": "^5.2.6",
+    "http-server": "^0.12.3",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
