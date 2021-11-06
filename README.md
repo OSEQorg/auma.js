@@ -1,8 +1,8 @@
 # Augmented Audio Framework (AUMA)
 
-AUMA is a framework for creating augmented audio applications. The framework currently supports the following application types:
+AUMA is a framework for creating augmented audio applications. The framework currently supports the following application types (optimized for mobile devices):
 
-- **Survey**. A set of yes/no questions with user feedback at the end based on the survey score.
+- [**Survey**](https://auma-demos.surge.sh/survey/). A set of yes/no questions with user feedback at the end based on the survey score.
 
 In general, an augmented audio application may be created by including a `<script/>` tag for the application type, and by then providing some minimal, application specific configuration. Scripts are available from the UNPKG CDN: https://unpkg.com/@oseq/auma/. This sounds a bit abstract, read on to understand more!
 
@@ -34,7 +34,7 @@ You create an augmented audio application with just a simple HTML file:
 You only need to make a few small adaptions:
 
 * Replace `SCRIPT` with a link to the AUMA script for your application type. 
-  * Example: For the survey application type https://unpkg.com/@oseq/auma/dist/auma-survey.js. You can fix a specific version of the script in the URL if you like e.g. for v1.2.3 of the survey application type script use https://unpkg.com/@oseq/auma@1.2.3/dist/auma-survey.js.
+  * Example: For the survey application type https://unpkg.com/@oseq/auma/dist/auma-survey.js. It is recommended to fix a specific version of the script in the URL e.g. for v1.2.3 of the survey use https://unpkg.com/@oseq/auma@1.2.3/dist/auma-survey.js.
 * Complete `YOUR_APP_CONFIGURATION` to configure your specific application.
 
 For script and configuration information read the application type specific documentation below.
