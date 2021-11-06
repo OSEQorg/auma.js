@@ -46,10 +46,10 @@ const App = {
   },
 };
 
-function survey(config) {
+function auma(config) {
   config.trackFn = config.trackFn || function () {};
 
-  document.title = "Survey | " + config.id;
+  document.title = "Auma Survey | " + config.id;
 
   const vue = document.createElement("script");
   vue.src = VUE_CDN_URL;
@@ -71,4 +71,4 @@ function survey(config) {
   document.head.append(vue);
 }
 
-window.survey = survey;
+window.auma = auma;
