@@ -14,25 +14,28 @@ export const Results = {
     config: Object,
     results: Array,
   },
-  mounted() {
-    if (this.results.length != this.config.questions.length) {
-      throw new Error("results and questions have different length");
-    }
-  },
-  computed: {
-    numberYes() {
-      return this.results.filter((r) => r.option === "yes").length;
-    },
-    audioUrl() {
-      for (let i = 0; i < this.config.results.length; i++) {
+  setup(props) {
+    Vue.onMounted(() => {
+      if (props.results.length != props.config.questions.length) {
+        throw new Error("results and questions have different length");
+      }
+    });
+
+    const audioUrl = Vue.computed(() => {
+      const numberYes = props.results.filter((r) => r.option === "yes").length;
+      for (let i = 0; i < props.config.results.length; i++) {
         if (
-          this.numberYes >= this.config.results[i].from &&
-          this.numberYes <= this.config.results[i].to
+          numberYes >= props.config.results[i].from &&
+          numberYes <= props.config.results[i].to
         ) {
-          return this.config.results[i].audioUrl;
+          return props.config.results[i].audioUrl;
         }
       }
       throw new Error("could not find results audio");
-    },
+    });
+
+    return {
+      audioUrl,
+    };
   },
 };

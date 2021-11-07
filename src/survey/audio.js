@@ -49,48 +49,50 @@ export const Audio = {
 <audio 
     ref="audio" 
     :src="url"
-    @ended="onEnded"
+    @ended="ended"
     style="display:none;"
 ></audio>`,
   props: {
     url: String,
   },
-  data() {
-    return {
-      state: "start",
-    };
-  },
   emits: ["ready", "play", "pause", "ended", "replay"],
-  mounted() {
-    this.state = "start";
-    setTimeout(() => this.$emit("ready"), 1);
-  },
-  methods: {
-    play() {
-      this.$refs.audio.play();
-      this.state = "playing";
-      this.$emit("play");
-    },
-    pause() {
-      this.$refs.audio.pause();
-      this.state = "paused";
-      this.$emit("pause");
-    },
-    replay() {
-      this.$refs.audio.time = 0;
-      this.$refs.audio.play();
-      this.state = "playing";
-      this.$emit("replay");
-    },
-    onEnded() {
-      this.state = "ended";
-      this.$emit("ended");
-    },
-  },
-  watch: {
-    url() {
-      this.state = "start";
-      setTimeout(() => this.$emit("ready"), 1);
-    },
+  setup(props, ctx) {
+    const audio = Vue.ref();
+    const state = Vue.ref("start");
+
+    Vue.onMounted(() => {
+      setTimeout(() => ctx.emit("ready"), 1);
+    });
+
+    Vue.watch(Vue.toRef(props, "url"), () => {
+      state.value = "start";
+      setTimeout(() => ctx.emit("ready"), 1);
+    });
+
+    function play() {
+      audio.value.play();
+      state.value = "playing";
+      ctx.emit("play");
+    }
+
+    function pause() {
+      audio.value.pause();
+      state.value = "paused";
+      ctx.emit("pause");
+    }
+
+    function ended() {
+      state.value = "ended";
+      ctx.emit("ended");
+    }
+
+    function replay() {
+      audio.value.time = 0;
+      audio.value.play();
+      state.value = "playing";
+      ctx.emit("replay");
+    }
+
+    return { audio, state, play, pause, ended, replay };
   },
 };

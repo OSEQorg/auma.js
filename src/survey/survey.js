@@ -92,54 +92,68 @@ export const Survey = {
     config: Object,
   },
   emits: ["submit"],
-  data() {
-    return {
-      currentQuestionIdx: 0,
-      optionsDisabled: true,
-      results: [],
-    };
-  },
-  computed: {
-    currentQuestion() {
-      return this.questions[this.currentQuestionIdx];
-    },
-    percentageProgress() {
-      return 100 * (this.currentQuestionIdx / this.questions.length);
-    },
-  },
-  methods: {
-    choose(option) {
-      this.optionsDisabled = true;
-      this.results.push({
-        question: this.currentQuestion.id,
+  setup(props, ctx) {
+    const audio = Vue.ref();
+    const currentQuestionIdx = Vue.ref(0);
+    const optionsDisabled = Vue.ref(true);
+    const results = Vue.ref([]);
+
+    const currentQuestion = Vue.computed(
+      () => props.questions[currentQuestionIdx.value]
+    );
+    const percentageProgress = Vue.computed(
+      () => 100 * (currentQuestionIdx.value / props.questions.length)
+    );
+
+    function setQuestion(idx) {
+      currentQuestionIdx.value = idx;
+      optionsDisabled.value = true;
+    }
+
+    function choose(option) {
+      optionsDisabled.value = true;
+      results.value.push({
+        question: currentQuestion.value.id,
         option: option,
       });
 
-      if (!this.questions[this.currentQuestionIdx + 1]) {
-        this.config.trackFn("COMPLETE_SURVEY", {
-          score: this.results.filter((r) => r.option === "yes").length,
-          outOf: this.results.length,
+      if (props.questions[currentQuestionIdx.value + 1]) {
+        setQuestion(currentQuestionIdx.value + 1);
+      } else {
+        props.config.trackFn("COMPLETE_SURVEY", {
+          score: results.value.filter((r) => r.option === "yes").length,
+          outOf: results.value.length,
         });
-        this.$emit("submit", this.results);
-        return;
+        ctx.emit("submit", results.value);
       }
+    }
 
-      this.setQuestion(this.currentQuestionIdx + 1);
-    },
-    onAudioReady() {
-      if (this.currentQuestionIdx > 0) {
-        this.$refs.audio.play();
+    function onAudioReady() {
+      if (currentQuestionIdx.value > 0) {
+        audio.value.play();
       }
-    },
-    onAudioEnded() {
-      this.optionsDisabled = false;
-    },
-    onAudioReplay() {
-      this.optionsDisabled = true;
-    },
-    setQuestion(idx) {
-      this.currentQuestionIdx = idx;
-      this.optionsDisabled = true;
-    },
+    }
+
+    function onAudioEnded() {
+      optionsDisabled.value = false;
+    }
+
+    function onAudioReplay() {
+      optionsDisabled.value = true;
+    }
+
+    return {
+      audio,
+      currentQuestionIdx,
+      optionsDisabled,
+      results,
+      currentQuestion,
+      percentageProgress,
+      choose,
+      onAudioReady,
+      onAudioEnded,
+      onAudioReplay,
+      setQuestion,
+    };
   },
 };

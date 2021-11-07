@@ -25,7 +25,7 @@ module.exports = function config(env) {
 
   return {
     mode: env.mode,
-    entry: `./src/${env.appType}/app.js`,
+    entry: `./src/${env.appType}/main.js`,
     output: {
       filename: `auma-${env.appType}.js`,
       path: outDir,
