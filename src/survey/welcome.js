@@ -34,12 +34,14 @@ export const Welcome = {
     config: Object,
   },
   emits: ["done"],
-  data() {
-    return { audioEnded: false };
-  },
-  methods: {
-    done() {
-      this.$emit("done");
-    },
+  setup(props, ctx) {
+    const audioEnded = Vue.ref(false);
+    function done() {
+      ctx.emit("done");
+    }
+    return {
+      audioEnded,
+      done,
+    };
   },
 };
