@@ -1,6 +1,6 @@
-import { Welcome } from "./welcome";
-import { Survey } from "./survey";
-import { Results } from "./results";
+import { Welcome } from "./pages/welcome";
+import { Survey } from "./pages/survey";
+import { Results } from "./pages/results";
 
 export const App = {
   components: {

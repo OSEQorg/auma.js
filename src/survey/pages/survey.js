@@ -1,4 +1,4 @@
-import { Audio } from "./audio";
+import { Audio } from "../components/audio";
 
 import "./survey.css";
 
