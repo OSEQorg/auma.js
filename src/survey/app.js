@@ -2,6 +2,8 @@ import { Welcome } from "./pages/welcome";
 import { Survey } from "./pages/survey";
 import { Results } from "./pages/results";
 
+import "./app.css";
+
 export const App = {
   components: {
     welcome: Welcome,
@@ -10,6 +12,9 @@ export const App = {
   },
   template: `
 <div class="app">
+  <div v-if="config && config.logo" class="app__logo">
+    <img :src="config.logo.url" alt="" class="app__logo-img"/>
+  </div>
   <welcome 
     v-if="view == 'welcome'" 
     :config="config"

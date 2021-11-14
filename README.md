@@ -48,6 +48,9 @@ Configuration:
 ```ts
 type SurveyAppConfiguration = {
   id: string;
+  logo?: {
+    url: string;
+  };
   welcome: {
     audioUrl: string;
   };
