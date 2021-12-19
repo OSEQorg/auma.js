@@ -2,7 +2,8 @@
 
 AUMA is a framework for creating augmented audio applications. The framework currently supports the following application types (optimized for mobile devices):
 
-- [**Survey**](https://auma-demos.surge.sh/survey/). A set of yes/no questions with user feedback at the end based on the survey score.
+- [**Survey**](https://auma-demos.surge.sh/survey/). A linear set of yes/no questions with user feedback at the end based on the survey score. Example use case: A simple mental health survey.
+- [**Decision Tree**](https://auma-demos.surge.sh/decision-tree/). A tree of yes/no questions with user feedback at the end based on the choices made. Example use case: A self diagnosis tool.
 
 In general, an augmented audio application may be created by including a `<script/>` tag for the application type, and by then providing some minimal, application specific configuration. Scripts are available from the UNPKG CDN: https://unpkg.com/@oseq/auma/. This sounds a bit abstract, read on to understand more!
 
@@ -46,7 +47,7 @@ https://unpkg.com/@oseq/auma/dist/auma-survey.js
 Configuration:
 
 ```ts
-type SurveyAppConfiguration = {
+type SurveyConfiguration = {
   id: string;
   logo?: {
     url: string;
@@ -71,6 +72,41 @@ type SurveyAppConfiguration = {
 ```
 
 See `demo/survey/` (`npm run start-demo:survey`) for an example survey implementation.
+
+## Decision Tree
+
+Script: 
+
+https://unpkg.com/@oseq/auma/dist/auma-decision-tree.js
+
+Configuration:
+
+```ts
+type DecisionTreeConfiguration = {
+  id: string;
+  welcome: {
+    audioUrl: string;
+  };
+  questions: Array<{
+    id: string;
+    audioUrl: string;
+    imageUrl?: string;
+    // onYes/onNo are string directives of the form
+    // question:<questionId> or result:<resultId>
+    // e.g. onYes: "question:foo" to go to question with ID foo.
+    // e.g. onNo: "result:bar" to go to result with ID bar.
+    onYes: string;
+    onNo: string;
+  }>;
+  results: Array<{
+    id: string;
+    audioUrl: string;
+    imageUrl?: string;
+  }>;
+};
+```
+
+See `demo/decision-tree/` (`npm run start-demo:decision-tree`) for an example decision tree implementation.
 
 ## Development
 
