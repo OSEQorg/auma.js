@@ -1,4 +1,4 @@
-.survey {
+.tree {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -7,13 +7,13 @@
   align-items: center;
 }
 
-.survey__progress {
+.tree__image {
   margin-top: 2rem;
-  width: 100%;
-  padding: 0 2rem;
+  width: 200px;
+  max-width: 100%;
 }
 
-.survey__options {
+.tree__options {
   margin-top: 2rem;
   width: 100%;
   padding: 0 2rem;
@@ -22,12 +22,12 @@
   align-items: center;
 }
 
-.survey__options.disabled {
+.tree__options.disabled {
   pointer-events: none;
   opacity: 0.3;
 }
 
-.survey__options-button {
+.tree__options-button {
   border: none;
   background-color: transparent;
 }

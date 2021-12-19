@@ -1,5 +1,5 @@
 import { Welcome } from "./pages/welcome";
-import { Survey } from "./pages/survey";
+import { Tree } from "./pages/tree";
 import { Results } from "./pages/results";
 
 import "./app.css";
@@ -7,57 +7,52 @@ import "./app.css";
 export const App = {
   components: {
     welcome: Welcome,
-    survey: Survey,
+    tree: Tree,
     results: Results,
   },
   template: `
 <div class="app">
-  <div v-if="config && config.logo" class="app__logo">
-    <img :src="config.logo.url" alt="" class="app__logo-img"/>
-  </div>
   <welcome 
     v-if="view == 'welcome'" 
     :config="config"
     @done="welcomeDone"
   ></welcome>
-  <survey 
-    v-if="view == 'survey'" 
+  <tree 
+    v-if="view == 'tree'" 
     :config="config"
     :questions="config.questions" 
-    @submit="surveyDone"
-  ></survey>
-  <results 
+    @result="showResult"
+  ></tree>
+  <results
     v-if="view == 'results'" 
-    :config="config"
-    :results="results"
+    :result="result"
   ></results>
 </div>`,
   setup() {
     const config = Vue.ref();
     const view = Vue.ref("init");
-    const results = Vue.ref([]);
+    const result = Vue.ref();
 
     function start() {
       view.value = "welcome";
-      config.value.trackFn("PAGE_WELCOME");
     }
 
     function welcomeDone() {
-      view.value = "survey";
+      view.value = "tree";
     }
 
-    function surveyDone(surveyResults) {
-      results.value = surveyResults;
+    function showResult(resultId) {
+      result.value = config.value.results.filter((r) => r.id == resultId)[0];
       view.value = "results";
     }
 
     return {
       config,
       view,
-      results,
+      result,
       start,
       welcomeDone,
-      surveyDone,
+      showResult,
     };
   },
 };

@@ -3,9 +3,7 @@ import { App } from "./app";
 import "./main.css";
 
 function auma(config) {
-  config.trackFn = config.trackFn || function () {};
-
-  document.title = "Auma Survey | " + config.id;
+  document.title = "Auma Decision Tree | " + config.id;
 
   const metaViewport = document.createElement("meta");
   metaViewport.name = "viewport";

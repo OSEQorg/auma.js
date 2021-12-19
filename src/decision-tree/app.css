@@ -2,21 +2,3 @@
 .app * {
   box-sizing: border-box;
 }
-
-.app {
-  position: relative;
-}
-
-.app__logo {
-  position: absolute;
-  top: 25px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.app__logo-img {
-  width: 70%;
-  max-height: 75px;
-}
