@@ -11,7 +11,7 @@ function checkEnv(value, allowedValues, name) {
 module.exports = function config(env) {
   checkEnv(env.mode, ["development", "production"], "env.mode");
   checkEnv(env.out, ["dist", "demo"], "env.out");
-  checkEnv(env.appType, ["survey"], "env.appType");
+  checkEnv(env.appType, ["survey", "decision-tree"], "env.appType");
 
   const vueCdnUrl = {
     development: "https://unpkg.com/vue@3.2.8/dist/vue.global.js",

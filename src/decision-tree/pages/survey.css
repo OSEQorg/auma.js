@@ -1,0 +1,33 @@
+.survey {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.survey__progress {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.survey__options {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.survey__options.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.survey__options-button {
+  border: none;
+  background-color: transparent;
+}
