@@ -1,4 +1,4 @@
-import { Audio } from "../components/audio";
+import { Audio } from "../../common/audio";
 
 import "./welcome.css";
 
