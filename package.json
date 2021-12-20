@@ -1,6 +1,6 @@
 {
   "name": "@oseq/auma",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Augmented Audio Framework (AUMA).",
   "repository": "os4eq/auma",
   "license": "MIT",
