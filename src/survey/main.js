@@ -13,6 +13,7 @@ const defaultTheme = {
 };
 
 function auma(config) {
+  config.allowSkip = config.allowSkip === undefined ? true : config.allowSkip;
   config.theme = {
     ...defaultTheme,
     ...(config.theme || {}),

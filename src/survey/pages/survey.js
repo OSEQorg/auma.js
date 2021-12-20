@@ -62,7 +62,9 @@ export const Survey = {
     </button>
   </div>
 
-  <div class="survey__options" :class="{disabled: optionsDisabled}">
+  <div 
+    v-if="config.allowSkip"
+    class="survey__options" :class="{disabled: optionsDisabled}">
     <button 
       class="survey__options-button" 
       @click="choose('skip')" 

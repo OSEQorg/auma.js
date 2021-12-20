@@ -49,6 +49,7 @@ Configuration:
 ```ts
 type SurveyConfiguration = {
   id: string;
+  allowSkip?: boolean;
   welcome: {
     audioUrl: string;
   };
