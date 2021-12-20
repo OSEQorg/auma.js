@@ -41,6 +41,12 @@ export const Survey = {
     :percentage="percentageProgress"
     class="survey__progress"/>
 
+  <img 
+    v-if="currentQuestion.imageUrl" 
+    :src="currentQuestion.imageUrl" 
+    class="survey__image"
+  />
+
   <div class="survey__options" :class="{disabled: optionsDisabled}">
     <button 
       class="survey__options-button" 
@@ -64,7 +70,7 @@ export const Survey = {
 
   <div 
     v-if="config.allowSkip"
-    class="survey__options" :class="{disabled: optionsDisabled}">
+    class="survey__option-skip" :class="{disabled: optionsDisabled}">
     <button 
       class="survey__options-button" 
       @click="choose('skip')" 

@@ -8,7 +8,13 @@ export const Results = {
   },
   template: `
 <div class="results">
-  <app-audio :url="audioUrl" :style="{width: '240px'}"/>
+  <app-audio :url="result.audioUrl"/>
+
+  <img 
+    v-if="result.imageUrl" 
+    :src="result.imageUrl" 
+    class="results__image"
+  />
 </div>`,
   props: {
     config: Object,
@@ -21,21 +27,21 @@ export const Results = {
       }
     });
 
-    const audioUrl = Vue.computed(() => {
+    const result = Vue.computed(() => {
       const numberYes = props.results.filter((r) => r.option === "yes").length;
       for (let i = 0; i < props.config.results.length; i++) {
         if (
           numberYes >= props.config.results[i].from &&
           numberYes <= props.config.results[i].to
         ) {
-          return props.config.results[i].audioUrl;
+          return props.config.results[i];
         }
       }
-      throw new Error("could not find results audio");
+      throw new Error("could not find result");
     });
 
     return {
-      audioUrl,
+      result,
     };
   },
 };

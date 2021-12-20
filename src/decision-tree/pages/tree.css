@@ -7,13 +7,13 @@
 }
 
 .tree__image {
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 200px;
   max-width: 100%;
 }
 
 .tree__options {
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   padding: 0 2rem;
   display: flex;

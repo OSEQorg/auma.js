@@ -7,13 +7,19 @@
 }
 
 .survey__progress {
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   padding: 0 2rem;
 }
 
-.survey__options {
-  margin-top: 2rem;
+.survey__image {
+  margin-top: 1rem;
+  width: 200px;
+  max-width: 100%;
+}
+
+.survey__options,
+.survey__option-skip {
   width: 100%;
   padding: 0 2rem;
   display: flex;
@@ -21,7 +27,16 @@
   align-items: center;
 }
 
-.survey__options.disabled {
+.survey__options {
+  margin-top: 1rem;
+}
+
+.survey__option-skip {
+  margin-top: 1rem;
+}
+
+.survey__options.disabled,
+.survey__option-skip.disabled {
   pointer-events: none;
   opacity: 0.3;
 }

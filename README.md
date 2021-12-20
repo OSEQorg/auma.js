@@ -56,6 +56,7 @@ type SurveyConfiguration = {
   questions: Array<{
     id: string;
     audioUrl: string;
+    imageUrl?: string;
   }>;
   // Result audio chosen based on survey score.
   // Choose audio where `from<=score<=to`.
@@ -63,6 +64,7 @@ type SurveyConfiguration = {
     from: number;
     to: number;
     audioUrl: string;
+    imageUrl?: string;
   }>;
   theme?: {
     logoUrl?: string;
