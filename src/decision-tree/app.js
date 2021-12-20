@@ -12,6 +12,9 @@ export const App = {
   },
   template: `
 <div class="app">
+  <div v-if="config && config.logo" class="app__logo">
+    <img :src="config.logo.url" alt="" class="app__logo-img"/>
+  </div>
   <welcome 
     v-if="view == 'welcome'" 
     :config="config"
