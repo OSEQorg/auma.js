@@ -49,9 +49,6 @@ Configuration:
 ```ts
 type SurveyConfiguration = {
   id: string;
-  logo?: {
-    url: string;
-  };
   welcome: {
     audioUrl: string;
   };
@@ -66,6 +63,15 @@ type SurveyConfiguration = {
     to: number;
     audioUrl: string;
   }>;
+  theme?: {
+    logoUrl?: string;
+    buttonYesBgColor?: string;
+    buttonYesFgColor?: string;
+    buttonNoBgColor?: string;
+    buttonNoFgColor?: string;
+    buttonSkipBgColor?: string;
+    buttonSkipFgColor?: string;
+  };
   // Optional tracking function, will be called on key events.
   trackFn?: (event: string, extraData: object) => void;
 };
@@ -84,9 +90,6 @@ Configuration:
 ```ts
 type DecisionTreeConfiguration = {
   id: string;
-  welcome: {
-    audioUrl: string;
-  };
   questions: Array<{
     id: string;
     audioUrl: string;
@@ -103,6 +106,13 @@ type DecisionTreeConfiguration = {
     audioUrl: string;
     imageUrl?: string;
   }>;
+  theme?: {
+    logoUrl?: string;
+    buttonYesBgColor?: string;
+    buttonYesFgColor?: string;
+    buttonNoBgColor?: string;
+    buttonNoFgColor?: string;
+  };
 };
 ```
 

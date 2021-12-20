@@ -1,22 +1,7 @@
 import { Audio } from "../../common/audio";
+import { IconChoiceYes, IconChoiceNo } from "../../common/icons";
 
 import "./tree.css";
-
-const IconChoiceYes = {
-  template: `
-<svg xmlns="http://www.w3.org/2000/svg" width="64" viewBox="0 0 24 24">
-  <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" fill="#000"/>
-</svg>`,
-};
-
-const IconChoiceNo = {
-  template: `
-<svg xmlns="http://www.w3.org/2000/svg" width="64" viewBox="0 0 24 24">
-  <path 
-    d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"
-    fill="#000"/>
-</svg>`,
-};
 
 export const Tree = {
   components: {
@@ -45,14 +30,18 @@ export const Tree = {
       @click="choose('no')" 
       :disabled="optionsDisabled"
     >
-      <icon-choice-no/>
+      <icon-choice-no
+        :bgColor="config.theme.buttonNoBgColor"
+        :fgColor="config.theme.buttonNoFgColor"/>
     </button>
     <button 
       class="tree__options-button" 
       @click="choose('yes')" 
       :disabled="optionsDisabled"
     >
-      <icon-choice-yes/> 
+      <icon-choice-yes
+        :bgColor="config.theme.buttonYesBgColor"
+        :fgColor="config.theme.buttonYesFgColor"/> 
     </button>
   </div>
 </div>

@@ -2,7 +2,20 @@ import { App } from "./app";
 
 import "./main.css";
 
+const defaultTheme = {
+  logoUrl: undefined,
+  buttonYesBgColor: "#ddd",
+  buttonYesFgColor: "#000",
+  buttonNoBgColor: "#ddd",
+  buttonNoFgColor: "#000",
+};
+
 function auma(config) {
+  config.theme = {
+    ...defaultTheme,
+    ...(config.theme || {}),
+  };
+
   document.title = "Auma Decision Tree | " + config.id;
 
   const metaViewport = document.createElement("meta");

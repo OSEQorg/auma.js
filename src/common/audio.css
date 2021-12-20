@@ -1,5 +1,5 @@
 .audio {
-  width: 100px;
+  width: 80px;
   transition: all 3s;
 }
 
@@ -7,4 +7,5 @@
   display: block;
   border: none;
   background-color: transparent;
+  padding: 0;
 }

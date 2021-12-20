@@ -2,7 +2,21 @@ import { App } from "./app";
 
 import "./main.css";
 
+const defaultTheme = {
+  logoUrl: undefined,
+  buttonYesBgColor: "#ddd",
+  buttonYesFgColor: "#000",
+  buttonNoBgColor: "#ddd",
+  buttonNoFgColor: "#000",
+  buttonSkipBgColor: "#ddd",
+  buttonSkipFgColor: "#000",
+};
+
 function auma(config) {
+  config.theme = {
+    ...defaultTheme,
+    ...(config.theme || {}),
+  };
   config.trackFn = config.trackFn || function () {};
 
   document.title = "Auma Survey | " + config.id;
