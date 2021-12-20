@@ -17,6 +17,11 @@
     "build-demo:survey": "webpack --config webpack.config.js --env appType=survey --env out=demo --env mode=production",
     "build-demo-dev:survey": "webpack --config webpack.config.js --watch --env appType=survey --env out=demo --env mode=development",
     "start-demo:survey": "concurrently npm:build-demo-dev:survey \"http-server ./demo/survey\"",
+    "--- DECISION TREE ---": "",
+    "build:decision-tree": "webpack --config webpack.config.js --env appType=decision-tree --env out=dist --env mode=production",
+    "build-demo:decision-tree": "webpack --config webpack.config.js --env appType=decision-tree --env out=demo --env mode=production",
+    "build-demo-dev:decision-tree": "webpack --config webpack.config.js --watch --env appType=decision-tree --env out=demo --env mode=development",
+    "start-demo:decision-tree": "concurrently npm:build-demo-dev:decision-tree \"http-server ./demo/decision-tree\"",
     "--- MISC ---": "",
     "fmt": "prettier --write ."
   },

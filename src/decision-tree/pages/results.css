@@ -1,0 +1,14 @@
+.results {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results__image {
+  margin-top: 2rem;
+  width: 200px;
+  max-width: 100%;
+}

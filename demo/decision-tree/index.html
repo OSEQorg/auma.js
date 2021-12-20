@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./dist/auma-decision-tree.js"></script>
+  </head>
+  <body>
+    <script>
+      auma({
+        id: "demo-decision-tree",
+        welcome: {
+          audioUrl: "./mp3/welcome.mp3",
+        },
+        questions: [
+          {
+            id: "is-mammal",
+            audioUrl: "./mp3/question_is-mammal.mp3",
+            imageUrl: "./png/mammal.png",
+            onYes: "question:does-bark",
+            onNo: "question:has-legs",
+          },
+          {
+            id: "does-bark",
+            audioUrl: "./mp3/question_does-bark.mp3",
+            imageUrl: "./png/bark.png",
+            onYes: "result:dog",
+            onNo: "result:cat",
+          },
+          {
+            id: "has-legs",
+            audioUrl: "./mp3/question_has-legs.mp3",
+            imageUrl: "./png/legs.png",
+            onYes: "result:frog",
+            onNo: "result:snake",
+          },
+        ],
+        results: [
+          {
+            id: "dog",
+            audioUrl: "./mp3/result_dog.mp3",
+            imageUrl: "./png/dog.png",
+          },
+          {
+            id: "cat",
+            audioUrl: "./mp3/result_cat.mp3",
+            imageUrl: "./png/cat.png",
+          },
+          {
+            id: "frog",
+            audioUrl: "./mp3/result_frog.mp3",
+            imageUrl: "./png/frog.png",
+          },
+          {
+            id: "snake",
+            audioUrl: "./mp3/result_snake.mp3",
+            imageUrl: "./png/snake.png",
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>
