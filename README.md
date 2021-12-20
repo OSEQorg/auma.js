@@ -93,7 +93,6 @@ type DecisionTreeConfiguration = {
   id: string;
   welcome: {
     audioUrl: string;
-    imageUrl?: string;
   };
   questions: Array<{
     id: string;
