@@ -33,7 +33,7 @@ You create an augmented audio application with just a simple HTML file:
 You only need to make a few small adaptions:
 
 * Replace `SCRIPT` with a link to the AUMA script for your application type. 
-  * Example: For the survey application type https://unpkg.com/@oseq/auma/dist/auma-survey.js. It is recommended to fix a specific version of the script in the URL e.g. for v1.2.3 of the survey use https://unpkg.com/@oseq/auma@1.2.3/dist/auma-survey.js.
+  * Example: For the survey application type https://unpkg.com/@oseq/auma/dist/auma-survey.js. It is recommended to fix a specific version of the script in the URL e.g. for v0.0.1 of the survey use https://unpkg.com/@oseq/auma@0.0.1/dist/auma-survey.js.
 * Complete `YOUR_APP_CONFIGURATION` to configure your specific application.
 
 For script and configuration information read the application type specific documentation below.
