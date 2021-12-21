@@ -141,10 +141,12 @@ npm run start-demo:survey
 # see package.json "scripts" section for more.
 ```
 
-Releasing e.g. a patch
+Releasing:
 
 ```
 npm run build
 npm version patch
 npm publish
 ```
+
+Here we created a patch version. For now this probably makes the most sense - we should stay at major version v0 unless we plan to make strong compatibility guarantees. Hence it is especially important that consumers include explicitly the specific version of the script they use.
