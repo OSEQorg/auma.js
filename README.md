@@ -150,3 +150,11 @@ npm publish
 ```
 
 Here we created a patch version. For now this probably makes the most sense - we should stay at major version v0 unless we plan to make strong compatibility guarantees. Hence it is especially important that consumers include explicitly the specific version of the script they use.
+
+Deploying the demo:
+
+```
+npm run deploy-demo
+```
+
+Demo is currently deployed with https://surge.sh/. Collaborators can be added using the `--add` flag https://surge.sh/help/adding-collaborators/.
