@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "--- CORE ---": "",
-    "build": "npm run build:survey",
-    "build-demo": "npm run build-demo:survey",
+    "build": "npm run build:survey && npm run build:decision-tree",
+    "build-demo": "npm run build-demo:survey && npm run build-demo:decision-tree",
     "deploy-demo": "npm run build-demo && surge ./demo auma-demos.surge.sh",
     "--- SURVEY ---": "",
     "build:survey": "webpack --config webpack.config.js --env appType=survey --env out=dist --env mode=production",
