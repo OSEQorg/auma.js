@@ -17,6 +17,6 @@
 }
 
 .app__logo-img {
-  width: 40%;
+  max-width: 40%;
   max-height: 50px;
 }
