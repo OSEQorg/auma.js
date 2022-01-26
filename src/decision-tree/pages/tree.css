@@ -1,5 +1,5 @@
 .tree {
-  flex-grow: 1;
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +8,7 @@
 
 .tree__image {
   margin-top: 1rem;
-  width: 200px;
+  width: 90%;
   max-width: 100%;
 }
 
