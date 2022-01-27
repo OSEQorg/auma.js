@@ -144,9 +144,11 @@ npm run start-demo:survey
 Releasing:
 
 ```
+# ensure no changes in workspace. `git status` => "nothing to commit, working tree clean"
 npm run build
 npm version patch
 npm publish
+git push
 ```
 
 Here we created a patch version. For now this probably makes the most sense - we should stay at major version v0 unless we plan to make strong compatibility guarantees. Hence it is especially important that consumers include explicitly the specific version of the script they use.
